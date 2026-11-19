@@ -1,0 +1,57 @@
+---
+import InceptionTotem from './InceptionTotem.jsx';
+---
+
+<section
+  id="inicio"
+  class="relative min-h-[100svh] flex items-center pt-28 pb-20 overflow-hidden"
+>
+  <!-- Luz ambiental azul/cyan muy sutil detrás del tótem -->
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0 z-0"
+    style="background: radial-gradient(circle at 75% 48%, rgba(59, 130, 246, 0.12) 0%, rgba(34, 211, 238, 0.04) 36%, transparent 66%);"
+  ></div>
+
+  <div class="inception-container relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <!-- Orden de lectura 1º: Slogan | 2º: Línea de apoyo | 3º: CTA -->
+      <div class="lg:col-span-7 flex flex-col items-start">
+        <h1 class="type-display max-w-[13ch] mb-6" data-hero-reveal>
+          Sistemas y webs para tu <span style="color: var(--accent);">operación</span>.
+        </h1>
+
+        <p class="type-lead max-w-[44ch] mb-10" data-hero-reveal>
+          Landing pages, reservas y gestión a medida.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4" data-hero-reveal>
+          <button
+            type="button"
+            onclick="window.dispatchEvent(new CustomEvent('open-cal-modal'))"
+            class="btn-primary"
+          >
+            <span>Agendar llamada</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </button>
+
+          <a href="#proyectos" class="btn-ghost">
+            Ver proyectos
+          </a>
+        </div>
+      </div>
+
+      <!-- Tótem 3D blanco minimalista -->
+      <div class="lg:col-span-5 relative flex items-center justify-center">
+        <div
+          class="w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] lg:w-[440px] lg:h-[440px] relative"
+          data-parallax
+        >
+          <InceptionTotem client:load />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,44 @@
+---
+import '../styles/global.css';
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>Página no encontrada (404) | Inception Estudio</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="La página que buscas no existe o ha sido movida. Regresa al inicio de Inception Estudio." />
+  </head>
+  <body class="bg-bg text-white selection:bg-primary selection:text-white min-h-screen flex flex-col justify-between">
+    <nav class="w-full p-6 md:p-10 flex justify-between items-center z-50">
+      <a href="/" class="font-black tracking-tighter text-xl md:text-2xl text-primary">INCEPTION.</a>
+      <div class="flex gap-8 text-xs uppercase tracking-widest text-white/50">
+        <a href="/" class="hover:text-primary transition-colors">Inicio</a>
+      </div>
+    </nav>
+
+    <main class="flex-1 flex flex-col items-center justify-center px-6 text-center">
+      <span class="text-xs uppercase tracking-widest text-primary font-mono mb-4 px-3 py-1 border border-primary/30 rounded-full bg-primary/10">
+        Error 404
+      </span>
+      <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-white mb-6">
+        PÁGINA NO ENCONTRADA
+      </h1>
+      <p class="max-w-md text-white/60 text-lg mb-8 font-light">
+        El enlace que seguiste no existe o ha cambiado de dirección.
+      </p>
+      <a 
+        href="/" 
+        class="inline-flex items-center gap-2 bg-primary text-white font-medium px-8 py-4 rounded-full hover:bg-primary/90 transition-all hover:scale-105"
+      >
+        Volver a la página principal
+      </a>
+    </main>
+
+    <footer class="p-6 text-center text-xs text-white/40">
+      © {new Date().getFullYear()} Inception Estudio. Todos los derechos reservados.
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+---
+const phoneNumber = "5493872542403";
+const message = encodeURIComponent("Hola Inception Estudio, me gustaría consultar por un proyecto.");
+const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+---
+
+<aside aria-label="Contacto por WhatsApp" class="fixed bottom-6 right-6 z-40 flex items-center group">
+  <span
+    aria-hidden="true"
+    class="pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-200 mr-3 px-3.5 py-2 bg-[var(--bg-surface)] border border-[var(--border-hover)] text-[var(--text-primary)] text-xs font-display font-medium tracking-wider uppercase rounded-full shadow-lg whitespace-nowrap hidden sm:inline-block"
+  >
+    ¿Hablamos por WhatsApp?
+  </span>
+
+  <a
+    href={whatsappUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp al +54 9 3872 54-2403"
+    class="relative w-14 h-14 rounded-full bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-[#FEFFFA] flex items-center justify-center shadow-[0_12px_32px_-8px_rgba(59,130,246,0.6)] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
+  >
+    <svg class="w-7 h-7 fill-current text-[#FEFFFA]" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12.031 2C6.495 2 2 6.494 2 12.029c0 1.93.547 3.733 1.493 5.267L2 22l4.839-1.442a10.005 10.005 0 005.192 1.471h.004c5.534 0 10.029-4.494 10.029-10.029C22.064 6.494 17.568 2 12.031 2zm0 18.361c-1.637 0-3.2-.437-4.568-1.264l-.328-.198-3.391 1.01.996-3.307-.215-.342A8.32 8.32 0 013.69 12.03c0-4.6 3.743-8.344 8.345-8.344 2.23 0 4.325.869 5.901 2.447 1.577 1.578 2.445 3.673 2.444 5.901 0 4.601-3.743 8.327-8.349 8.327zm4.569-6.242c-.251-.126-1.483-.732-1.713-.815-.23-.084-.397-.126-.564.126-.168.251-.649.815-.795.983-.146.167-.293.188-.544.063-.251-.126-1.061-.391-2.021-1.247-.747-.666-1.252-1.489-1.398-1.74-.147-.251-.016-.387.11-.512.113-.113.251-.293.377-.439.125-.146.167-.251.251-.418.084-.168.042-.314-.021-.439-.063-.126-.564-1.36-.773-1.862-.204-.49-.412-.423-.564-.431l-.481-.008c-.167 0-.439.063-.669.314-.23.251-.878.858-.878 2.092 0 1.234.899 2.427 1.024 2.594.126.168 1.768 2.7 4.284 3.786.599.259 1.067.414 1.432.53.602.191 1.15.164 1.583.1.483-.072 1.483-.606 1.692-1.192.21-.586.21-1.088.147-1.192-.063-.105-.23-.168-.481-.293z" />
+    </svg>
+  </a>
+</aside>

@@ -1,0 +1,337 @@
+---
+import '../styles/global.css';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Process from '../components/Process.astro';
+import Projects from '../components/Projects.jsx';
+import About from '../components/About.astro';
+import FAQ from '../components/FAQ.astro';
+import ContactSection from '../components/ContactSection.jsx';
+import Footer from '../components/Footer.astro';
+import MobileMenu from '../components/MobileMenu.jsx';
+import CalModal from '../components/CalModal.jsx';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { faqs } from '../data/faqs.js';
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://estudioinception.com/#business",
+      "name": "Inception Estudio",
+      "alternateName": ["Estudio Inception", "Inception Estudio Argentina"],
+      "description": "Estudio de diseño y desarrollo web en Argentina. Creamos landing pages de alta conversión, sistemas de reservas y plataformas digitales a medida.",
+      "url": "https://estudioinception.com",
+      "telephone": "+54 9 3872 54-2403",
+      "email": "inceptionestudio@gmail.com",
+      "logo": "https://estudioinception.com/logo.png",
+      "priceRange": "$$",
+      "currenciesAccepted": "ARS, USD",
+      "areaServed": [
+        { "@type": "Country", "name": "Argentina" },
+        { "@type": "AdministrativeArea", "name": "Buenos Aires" },
+        { "@type": "City", "name": "Salta" },
+        { "@type": "AdministrativeArea", "name": "La Rioja" }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/estudio.inception/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://estudioinception.com/#website",
+      "url": "https://estudioinception.com",
+      "name": "Inception Estudio",
+      "description": "Estudio de arquitectura digital, diseño UX/UI y desarrollo web en Argentina",
+      "publisher": { "@id": "https://estudioinception.com/#business" },
+      "inLanguage": "es-AR"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://estudioinception.com/#faqs",
+      "mainEntity": faqs.map((item) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>Inception Estudio | Arquitectura Web y Diseño Digital</title>
+    <meta name="description" content="Estudio de diseño y desarrollo web en Argentina. Landing pages de alta conversión, sistemas de reservas y plataformas rápidas para empresas." />
+    <meta name="author" content="Inception Estudio" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://estudioinception.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://estudioinception.com/" />
+    <meta property="og:title" content="Inception Estudio | Arquitectura Web y Diseño Digital" />
+    <meta property="og:description" content="Landing pages de alta conversión, sistemas de reservas y plataformas digitales a medida en Argentina." />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:site_name" content="Inception Estudio" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  </head>
+  <body>
+    <a
+      href="#contenido-principal"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[120] focus:px-4 focus:py-2 focus:rounded-full focus:bg-[var(--accent)] focus:text-[var(--accent-ink)] focus:font-display focus:text-sm focus:font-bold"
+    >
+      Ir al contenido principal
+    </a>
+
+    <!-- Grilla arquitectónica de fondo sutil -->
+    <div class="fixed inset-0 architectural-grid pointer-events-none z-0" aria-hidden="true"></div>
+
+    <header>
+      <nav
+        id="main-nav"
+        aria-label="Navegación principal"
+        class="fixed top-0 w-full z-40 transition-colors duration-300"
+      >
+        <div class="inception-container h-20 flex items-center justify-between gap-6">
+          <a href="#inicio" class="font-display font-bold tracking-tight text-xl text-[var(--text-primary)]">
+            INCEPTION<span style="color: var(--accent);">.</span>
+          </a>
+
+          <div class="hidden md:flex items-center gap-8 text-xs font-display font-medium uppercase tracking-[0.08em] text-[var(--text-secondary)]">
+            <a href="#servicios" class="hover:text-[var(--text-primary)] transition-colors">Servicios</a>
+            <a href="#proceso" class="hover:text-[var(--text-primary)] transition-colors">Proceso</a>
+            <a href="#proyectos" class="hover:text-[var(--text-primary)] transition-colors">Proyectos</a>
+            <a href="#alcance" class="hover:text-[var(--text-primary)] transition-colors">Alcance</a>
+            <a href="#contacto" class="hover:text-[var(--text-primary)] transition-colors">Contacto</a>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button
+              type="button"
+              onclick="window.dispatchEvent(new CustomEvent('open-cal-modal'))"
+              class="hidden md:inline-flex items-center justify-center min-h-[40px] px-5 rounded-full border border-[var(--border-subtle)] hover:border-[var(--accent)] text-xs font-display font-medium uppercase tracking-[0.08em] text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors cursor-pointer"
+            >
+              Agendar
+            </button>
+            <MobileMenu client:idle />
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="contenido-principal" class="relative z-10">
+      <Hero />
+      <Services />
+      <Process />
+      <Projects client:visible />
+      <About />
+      <FAQ />
+      <ContactSection client:visible />
+    </main>
+
+    <Footer />
+    <CalModal client:idle />
+    <WhatsAppButton />
+
+    <script>
+      import Lenis from 'lenis';
+      import gsap from 'gsap';
+      import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const nav = document.getElementById('main-nav');
+
+      const updateNav = () => {
+        if (!nav) return;
+        if (window.scrollY > 32) {
+          nav.classList.add('nav-scrolled');
+        } else {
+          nav.classList.remove('nav-scrolled');
+        }
+      };
+
+      window.addEventListener('scroll', updateNav, { passive: true });
+      updateNav();
+
+      if (!prefersReducedMotion) {
+        const lenis = new Lenis({
+          duration: 1.1,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          smoothWheel: true,
+        });
+
+        lenis.on('scroll', ScrollTrigger.update);
+
+        gsap.ticker.add((time) => {
+          lenis.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0);
+
+        // Navegación suave con Lenis para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener('click', (e) => {
+            const targetId = anchor.getAttribute('href');
+            if (!targetId || targetId === '#') return;
+            const targetEl = document.querySelector(targetId);
+            if (!targetEl) return;
+            e.preventDefault();
+            lenis.scrollTo(targetEl, { offset: -64 });
+          });
+        });
+
+        // Entrada inicial del Hero (inmediata al cargar)
+        gsap.from('[data-hero-reveal]', {
+          y: 22,
+          scale: 0.98,
+          opacity: 0,
+          filter: 'blur(4px)',
+          duration: 0.85,
+          stagger: 0.08,
+          ease: 'power3.out',
+          clearProps: 'transform,filter,opacity',
+        });
+
+        // Animaciones vinculadas al scroll (progresivas al bajar, regresivas al subir)
+        gsap.utils.toArray('[data-reveal]').forEach((el) => {
+          gsap.fromTo(
+            el,
+            {
+              y: 36,
+              scale: 0.96,
+              opacity: 0,
+              filter: 'blur(4px)',
+            },
+            {
+              y: 0,
+              scale: 1,
+              opacity: 1,
+              filter: 'blur(0px)',
+              ease: 'none',
+              scrollTrigger: {
+                trigger: el,
+                start: 'top 92%',
+                end: 'top 62%',
+                scrub: 0.7,
+              },
+            }
+          );
+        });
+
+        // Grupos de tarjetas vinculados al scroll (progresivo y regresivo)
+        gsap.utils.toArray('[data-stagger-group]').forEach((group) => {
+          const items = group.querySelectorAll('[data-stagger-item]');
+          if (!items.length) return;
+          gsap.fromTo(
+            items,
+            {
+              y: 32,
+              scale: 0.96,
+              opacity: 0,
+              filter: 'blur(3px)',
+            },
+            {
+              y: 0,
+              scale: 1,
+              opacity: 1,
+              filter: 'blur(0px)',
+              stagger: 0.12,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: group,
+                start: 'top 90%',
+                end: 'top 52%',
+                scrub: 0.75,
+              },
+            }
+          );
+        });
+
+        // Proceso con locking de pantalla e iluminación progresiva bidireccional
+        const processSection = document.getElementById('proceso');
+        const processSteps = gsap.utils.toArray('[data-process-step]');
+        const progressBar = document.getElementById('process-progress-bar');
+        const stepCounter = document.getElementById('process-step-counter');
+
+        const updateProcessHighlight = (progress) => {
+          const activeIndex = progress < 0.34 ? 0 : progress < 0.68 ? 1 : 2;
+          if (stepCounter) {
+            stepCounter.textContent = `0${activeIndex + 1} / 03`;
+          }
+          if (progressBar) {
+            progressBar.style.transform = `scaleX(${Math.max(0.06, progress)})`;
+          }
+          processSteps.forEach((stepEl, idx) => {
+            const threshold = idx * 0.33;
+            const isLit = progress >= threshold - 0.04;
+            const isCurrent = idx === activeIndex;
+            const dot = stepEl.querySelector('[data-process-dot]');
+            const num = stepEl.querySelector('[data-process-num]');
+
+            stepEl.style.opacity = isLit ? (isCurrent ? '1' : '0.78') : '0.25';
+            if (dot) {
+              dot.style.backgroundColor = isLit ? 'var(--accent)' : 'var(--bg-base)';
+              dot.style.borderColor = isLit ? 'var(--accent)' : 'var(--border-subtle)';
+              dot.style.boxShadow = isCurrent ? '0 0 14px rgba(59, 130, 246, 0.55)' : 'none';
+            }
+            if (num) {
+              num.style.color = isLit ? 'var(--accent)' : 'var(--text-muted)';
+            }
+          });
+        };
+
+        if (processSection && processSteps.length) {
+          const mm = gsap.matchMedia();
+
+          mm.add('(min-width: 1024px)', () => {
+            updateProcessHighlight(0);
+            ScrollTrigger.create({
+              trigger: processSection,
+              start: 'top top',
+              end: '+=1500',
+              pin: true,
+              scrub: true,
+              onUpdate: (self) => updateProcessHighlight(self.progress),
+            });
+          });
+
+          mm.add('(max-width: 1023px)', () => {
+            ScrollTrigger.create({
+              trigger: processSection,
+              start: 'top 70%',
+              end: 'bottom 45%',
+              scrub: true,
+              onUpdate: (self) => updateProcessHighlight(self.progress),
+            });
+          });
+        }
+
+        // Parallax sutil del contenedor del tótem
+        gsap.utils.toArray('[data-parallax]').forEach((el) => {
+          gsap.to(el, {
+            y: -28,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: '#inicio',
+              start: 'top top',
+              end: 'bottom top',
+              scrub: true,
+            },
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

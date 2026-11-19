@@ -1,0 +1,77 @@
+---
+const sectors = [
+  {
+    code: "01",
+    sector: "Estudios y Firmas",
+    solution: "Presencia institucional sobria, áreas de práctica y agenda de consultas directas.",
+    deliverable: "Web + Turnos"
+  },
+  {
+    code: "02",
+    sector: "Negocios y Gastronomía",
+    solution: "Toma de pedidos optimizada en móvil, impresión de remitos y control de cobros.",
+    deliverable: "Plataforma & Delivery"
+  },
+  {
+    code: "03",
+    sector: "Empresas y Catálogos B2B",
+    solution: "Exhibición de productos con filtros dinámicos y derivación directa a presupuestos.",
+    deliverable: "Catálogo Digital"
+  },
+  {
+    code: "04",
+    sector: "Operaciones y Gestión Interna",
+    solution: "Paneles a medida para ventas, inventario, roles de equipo y automatizaciones.",
+    deliverable: "Sistema Web"
+  }
+];
+---
+
+<div class="section-rule"></div>
+
+<section id="alcance" class="section-space relative">
+  <div class="inception-container">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14" data-reveal>
+      <div>
+        <p class="type-caption mb-4">Alcance</p>
+        <h2 class="type-h1">
+          Para cada tipo de <span style="color: var(--accent);">operación</span>.
+        </h2>
+      </div>
+      <p class="type-lead max-w-[44ch]">
+        Adaptamos la arquitectura digital a la lógica real de tu rubro, sin soluciones enlatadas.
+      </p>
+    </div>
+
+    <div class="border-t border-[var(--border-subtle)]" data-stagger-group>
+      {sectors.map((item) => (
+        <div
+          class="group py-7 sm:py-8 border-b border-[var(--border-subtle)] grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-center transition-colors duration-300 hover:border-b-[var(--accent)]"
+          data-stagger-item
+        >
+          <div class="md:col-span-1">
+            <span class="type-caption">{item.code}</span>
+          </div>
+
+          <div class="md:col-span-4">
+            <h3 class="type-h3 group-hover:text-[var(--accent-cyan)] transition-colors duration-300">
+              {item.sector}
+            </h3>
+          </div>
+
+          <div class="md:col-span-5">
+            <p class="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed">
+              {item.solution}
+            </p>
+          </div>
+
+          <div class="md:col-span-2 md:text-right">
+            <span class="inline-block px-3.5 py-1.5 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-surface)] text-xs font-display uppercase tracking-wider text-[var(--text-primary)] group-hover:border-[var(--accent)] group-hover:text-[var(--accent)] transition-colors duration-300">
+              {item.deliverable}
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,90 @@
+---
+const whatsappUrl = "https://wa.me/5493872542403?text=Hola%20Inception%20Estudio,%20quiero%20consultar%20por%20un%20proyecto.";
+const instagramUrl = "https://www.instagram.com/estudio.inception/";
+const email = "inceptionestudio@gmail.com";
+---
+
+<footer class="w-full border-t border-[var(--border-subtle)] pt-16 pb-10 relative z-10">
+  <div class="inception-container">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 mb-14">
+      <div class="md:col-span-6">
+        <a href="#inicio" class="inline-block font-display text-2xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+          INCEPTION<span style="color: var(--accent);">.</span>
+        </a>
+        <p class="text-[var(--text-secondary)] text-sm max-w-[42ch] leading-relaxed mb-6">
+          Arquitectura digital, landing pages y sistemas web a medida para empresas y profesionales de Argentina.
+        </p>
+        <div class="flex items-center gap-3">
+          <a
+            href={instagramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram de Inception Estudio"
+            class="w-11 h-11 rounded-full border border-[var(--border-subtle)] flex items-center justify-center text-[var(--text-secondary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp de Inception Estudio"
+            class="w-11 h-11 rounded-full border border-[var(--border-subtle)] flex items-center justify-center text-[var(--text-secondary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12.031 2C6.495 2 2 6.494 2 12.029c0 1.93.547 3.733 1.493 5.267L2 22l4.839-1.442a10.005 10.005 0 005.192 1.471h.004c5.534 0 10.029-4.494 10.029-10.029C22.064 6.494 17.568 2 12.031 2zm0 18.361c-1.637 0-3.2-.437-4.568-1.264l-.328-.198-3.391 1.01.996-3.307-.215-.342A8.32 8.32 0 013.69 12.03c0-4.6 3.743-8.344 8.345-8.344 2.23 0 4.325.869 5.901 2.447 1.577 1.578 2.445 3.673 2.444 5.901 0 4.601-3.743 8.327-8.349 8.327zm4.569-6.242c-.251-.126-1.483-.732-1.713-.815-.23-.084-.397-.126-.564.126-.168.251-.649.815-.795.983-.146.167-.293.188-.544.063-.251-.126-1.061-.391-2.021-1.247-.747-.666-1.252-1.489-1.398-1.74-.147-.251-.016-.387.11-.512.113-.113.251-.293.377-.439.125-.146.167-.251.251-.418.084-.168.042-.314-.021-.439-.063-.126-.564-1.36-.773-1.862-.204-.49-.412-.423-.564-.431l-.481-.008c-.167 0-.439.063-.669.314-.23.251-.878.858-.878 2.092 0 1.234.899 2.427 1.024 2.594.126.168 1.768 2.7 4.284 3.786.599.259 1.067.414 1.432.53.602.191 1.15.164 1.583.1.483-.072 1.483-.606 1.692-1.192.21-.586.21-1.088.147-1.192-.063-.105-.23-.168-.481-.293z"/>
+            </svg>
+          </a>
+          <a
+            href={`mailto:${email}`}
+            aria-label="Email de Inception Estudio"
+            class="w-11 h-11 rounded-full border border-[var(--border-subtle)] flex items-center justify-center text-[var(--text-secondary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="md:col-span-3">
+        <h4 class="font-display text-xs font-medium uppercase tracking-[0.08em] text-[var(--text-primary)] mb-4">Navegación</h4>
+        <ul class="space-y-3 text-sm text-[var(--text-secondary)]">
+          <li><a href="#servicios" class="hover:text-[var(--accent)] transition-colors">Servicios</a></li>
+          <li><a href="#proceso" class="hover:text-[var(--accent)] transition-colors">Proceso</a></li>
+          <li><a href="#proyectos" class="hover:text-[var(--accent)] transition-colors">Proyectos</a></li>
+          <li><a href="#alcance" class="hover:text-[var(--accent)] transition-colors">Alcance</a></li>
+          <li><a href="#contacto" class="hover:text-[var(--accent)] transition-colors">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-3">
+        <h4 class="font-display text-xs font-medium uppercase tracking-[0.08em] text-[var(--text-primary)] mb-4">Contacto</h4>
+        <ul class="space-y-3 text-sm text-[var(--text-secondary)]">
+          <li>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors">
+              +54 9 3872 54-2403
+            </a>
+          </li>
+          <li>
+            <a href={`mailto:${email}`} class="hover:text-[var(--accent)] transition-colors">
+              {email}
+            </a>
+          </li>
+          <li class="text-[var(--text-muted)]">Argentina · BSAS, Salta, La Rioja</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-8 border-t border-[var(--border-subtle)] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--text-muted)]">
+      <p>© 2026 Inception Estudio. Todos los derechos reservados.</p>
+      <div class="flex items-center gap-6">
+        <a href="/politica-de-privacidad/" class="hover:text-[var(--text-primary)] transition-colors">Privacidad</a>
+        <a href="/aviso-legal/" class="hover:text-[var(--text-primary)] transition-colors">Aviso Legal</a>
+        <a href="/condiciones-de-servicio/" class="hover:text-[var(--text-primary)] transition-colors">Condiciones</a>
+      </div>
+    </div>
+  </div>
+</footer>
